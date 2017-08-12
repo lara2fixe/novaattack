@@ -14,3 +14,33 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::get('/test', 'TestController@index');
+
+//Route::get('/test/users', 'TestController@getUsers');
+
+
+Route::group(['prefix' => 'test'], function() {
+	Route::get('/', 'TestController@index');
+	Route::get('/users', 'TestController@getUsers');
+});
+
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
+	Route::get('/', 'AdminController@index');
+	//Route::post('/', 'Admin2Controller@index');
+});
+
+//Route::get('user/{id?}', function($id = null) {
+//	return 'User ' . $id;
+//});
+
+//Route::get('user/{id?}', 'TestController@user');
+
+
+//Route::get('user/{id?}', 'TestController@user')->name('getUser');
+
+Route::get('user/{id}/{name}', 'TestController@user')->name('getUser');
+
+
+
