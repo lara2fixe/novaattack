@@ -1,0 +1,5 @@
+	@include('parts.home')
+	@include('parts.about')
+	@include('parts.project')
+	@include('parts.team')
+	@include('parts.news')

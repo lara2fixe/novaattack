@@ -44,3 +44,13 @@ Route::get('user/{id}/{name}', 'TestController@user')->name('getUser');
 
 
 
+
+
+Route::get('/', 'MainController@index')->name('site.main.index');
+
+Route::get('/blog', 'MainController@blog')->name('site.main.blog');
+Route::get('/post', 'MainController@post')->name('site.main.post');
+Route::get('/folio', 'MainController@folio')->name('site.main.folio');
+
+
+
